@@ -1,9 +1,10 @@
 #!/bin/bash
 
 # generate bingo pdfs
-for i in {1..2}
+mkdir pdfs
+for i in {1..10}
 do
-    python3 generate_bingo_tex.py --fields_file=fields.txt --template_file=bingo.tex.template | xelatex -c --jobname bingo$i --output-directory=pdfs
+    python3 generate_bingo_tex.py --fields_file=fields.txt --template_file=bingo.tex.template | xelatex -c --jobname bingo"$i" --output-directory=pdfs
 done
 
 # cleanup
